@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SRIBOGA</title>
+    <link rel="icon" href="Gambar/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <img src="Gambar\logo_name.png" alt="logo" id="logo" />
+      <button class="navbar-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="features" id="navbar-menu">
+        <a href="#">Tentang Kami</a>
+        <a href="#">Produk</a>
+        <a href="#">Inspirasi Baking</a>
+        <a href="#">Baking & Consulting</a>
+        <a href="#">Pemberdayaan UMKM</a>
+        <a href="#">Acara</a>
+        <a href="#">Hubungi Kami</a>
+      </div>
+    </nav>
+    <div class="home-container" id="home">
+      <div class="home-text">
+        <h2>APAPUN USAHA ANDA <br />SRIBOGA SEDIAKAN TERIGUNYA</h2>
+        <p>
+          -Chef Sriboga
+        </p>
+      </div>
+      <img
+        src="Gambar/home2.png"
+        alt="foto"
+      />
+    </div>
+    <div class="about-container" id="about">
+      <div class="about-text">
+        <h3>Pioneer in Flour Innovation</h3>
+        <p>
+          PT. Sriboga Raturaya berdiri pada tahun 1995. Pada thaun 2011 berubah menjadi Pt. Sriboga Flour Mill sebagai pelopor Produsen Tepung Terigu yang memiliki gizi tinggi di indonesia.
+        </p>
+        <div class="home-more">Learn More</div>
+      </div>
+      <div class="about-image">
+        <img src="Gambar\dalam1.jpg" alt="dalam1" />
+        <img src="Gambar\dalam2.jpeg" alt="dalam2" />
+        </div>
+      </div>
+    </div>
+    <div class="product-container" id="product">
+      <!-- <h1>Product</h1>
+      <div class="packet-container">
+        <div class="packet-card blueray">
+          <div class="image">
+            <div class="packet-overlay"></div>
+          </div>
+        </div>
+        <div class="packet-card supersin">
+          <div class="image">
+            <div class="packet-overlay"></div>
+          </div>
+        </div>
+        <div class="packet-card bluecromic">
+          <div class="image">
+            <div class="packet-overlay"></div>
+          </div>
+        </div>
+        <div class="packet-card photocromic">
+          <div class="image">
+            <div class="packet-overlay"></div>
+          </div>
+        </div>
+      </div> -->
+      <h1>Partners</h1>
+      <div class="button-selection">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <ul class="carousel"></ul>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+      </div>
+      <h1>Products</h1>
+      <div class="button-selection">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <ul class="carousel"></ul>
+        <i id="right" class="fa-solid fa-angle-right"></i>
+      </div>
+    </div>
+    <div class="footer" id="footer">
+    <script src="script.js"></script>
+  </body>
+</html>

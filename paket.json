@@ -1,0 +1,42 @@
+{
+  "partners": [{
+      "name": "Pizza",
+      "image": "Gambar/partners/1.png"
+    },{
+      "name": "Sari roti",
+      "image": "Gambar/partners/2.png"
+    },{
+      "name": "Marugame",
+      "image": "Gambar/partners/3.png"},
+      {
+      "name": "Ajinomoto",
+      "image": "Gambar/partners/4.png"
+    },
+      {
+      "name": "Jco",
+      "image": "Gambar/partners/5.png"
+    }
+  ],
+  "products": [
+    {
+      "image": "Gambar/products/1.png",
+      "name": "Sriboga Ninja"
+    },
+    {
+      "image": "Gambar/products/2.png",
+      "name": "Pita Merah"
+    },
+    {
+      "image": "Gambar/products/3.jpg",
+      "name": "Tali Emas"
+    },
+    {
+      "image": "Gambar/products/4.png",
+      "name": "Naga Hijau"
+    },
+    {
+      "image": "Gambar/products/5.png",
+      "name": "Stupa Hijau"
+    }
+  ]
+}
