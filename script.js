@@ -9,23 +9,6 @@ $(document).ready(function () {
     type: "GET",
     dataType: "json",
     success: (data) => {
-      // Generate Partner
-      // var partnersListHtml = "";
-      // $.each(data.partners (index, partners) => {
-      //   partnersListHtml +=
-      //     '<li class="card">' +
-      //     '<div class="img"><img src="' +
-      //     products.image +
-      //     '" alt="img" draggable="false" /></div>' +
-      //     "<h2>" +
-      //     products.name +
-      //     "</h2>" +
-      //     '<p class="deskripsi">' +
-      //     "</li>";
-      // });
-      // $(".carousel").html(partnersListHtml);
-      // swipe();
-      // generate products
       var productsListHtml = "";
       $.each(data.products, (index, products) => {
         productsListHtml +=
@@ -46,90 +29,7 @@ $(document).ready(function () {
       console.error(error);
     },
   });
-  // Menambahkan kelas active ke elemen features saat menggulir
-  $(window).scroll(function () {
-    var scrollPos = $(document).scrollTop();
-    var offset = 76; // Ubah nilai offset sesuai kebutuhan
-    $(".features a").each(function () {
-      var currLink = $(this);
-      var refElement = $(currLink.attr("href"));
-      if (
-        refElement.position().top - offset < scrollPos &&
-        refElement.position().top + refElement.height() > scrollPos
-      ) {
-        $(".features a").removeClass("active");
-        currLink.addClass("active");
-      }
-    });
-  });
-
-  // Untuk animasi features & tambah kelas
-  $(".features a,.footer-menu a").click(function (e) {
-    $(".features a").removeClass("active");
-    $(this).addClass("active");
-    var target = $(this).attr("href");
-    if ($(target).length) {
-      if (target.charAt(0) === "#home") {
-        window.location.href = target;
-      } else if (target === "#product") {
-        $("html, body").animate(
-          {
-            scrollTop: $(target).offset().top - 55,
-          },
-          1000
-        );
-      } else {
-        $("html, body").animate(
-          {
-            scrollTop: $(target).offset().top - 70,
-          },
-          1000
-        );
-      }
-    }
-  });
-
-  // Untuk event klik home-more
-  $(".home-more").click(function (e) {
-    e.preventDefault();
-    $(".features a").removeClass("active");
-    $(".features a[href='#about']").addClass("active");
-    $("html, body").animate(
-      {
-        scrollTop: $("#about").offset().top - 70,
-      },
-      1000
-    );
-  });
-
-  // Untuk event contact wa hide ketika sampai ke footer
-  $(window).on("load scroll", toggleContactContainer);
-
-  // Untuk mereset lokasi ketika meninggalkan web
-  $(window).on("beforeunload", function () {
-    $(window).scrollTop(0);
-  });
 });
-
-// Function untuk mendeteksi apakah sudah sampai footer
-const isAtFooter = () => {
-  const footer = $("#footer");
-  const scrollPosition = $(window).scrollTop();
-  const footerPosition = footer.offset().top;
-  const windowHeight = $(window).height();
-
-  return scrollPosition >= footerPosition - windowHeight;
-};
-
-// Function hide/show contact us
-const toggleContactContainer = () => {
-  const contactContainer = $(".contact-container");
-  if (isAtFooter()) {
-    contactContainer.hide();
-  } else {
-    contactContainer.show();
-  }
-};
 
 // Function on mini display
 const toggleMenu = () => {
@@ -176,7 +76,6 @@ const swipe = () => {
         ($(this).attr("id") === "left" ? -firstCardWidth : firstCardWidth)
     );
   });
-
   // Fungsi untuk memulai drag
   const dragStart = (e) => {
     isDragging = true;
@@ -227,10 +126,10 @@ const swipe = () => {
   // Fungsi untuk autoplay
   const autoPlay = () => {
     if (window.innerWidth < 800 || !isAutoPlay) return; // Keluar jika lebar window lebih kecil dari 800 atau isAutoPlay adalah false
-    // Autoplay carousel setiap 2000 ms
+    // Autoplay carousel setiap 2500 ms
     timeoutId = setTimeout(
       () => carousel.scrollLeft(carousel.scrollLeft() + firstCardWidth),
-      2500
+      1500
     );
   };
   autoPlay();
@@ -242,4 +141,5 @@ const swipe = () => {
   carousel.on("scroll", infiniteScroll);
   buttonSelection.on("mouseenter", () => clearTimeout(timeoutId));
   buttonSelection.on("mouseleave", autoPlay);
+
 };
